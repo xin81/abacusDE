@@ -1,0 +1,17 @@
+================ SOUND ASSETS ====================
+Sound Assets:
+
+"Battering End of Battery into Wooden Panel 3.wav"
+by F.M.Audio
+Source: https://freesound.org/s/560334/
+License: Creative Commons Attribution 4.0 (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+=============== APACHE LOG4J =====================
+Apache Log4j
+Copyright 1999–2026 Apache Software Foundation
+
+This software is licensed under the Apache License, Version 2.0.
+http://www.apache.org/licenses/LICENSE-2.0
+
+Used under dependency management (Maven).
