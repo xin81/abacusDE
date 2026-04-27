@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug"><!-- WARN -->    
+<Appenders>
+
+<!-- INFO Rolling File -->
+<RollingFile name="InfoFile" 
+             fileName="logs/info.log" 
+             filePattern="logs/info-%d{yyyy-MM-dd}-%i.log.gz">
+   
+   <!-- <PatternLayout
+    pattern="%d %-5level %c - %msg%n" />
+    --> 
+   <PatternLayout
+   pattern="%d %-5level %logger{1}.%M(%L) - %msg%n" />
+    
+    <Filters>
+        <LevelRangeFilter minLevel="info"
+        maxLevel="info" onMatch="ACCEPT"
+        onMismatch="DENY"/>
+    </Filters>
+
+    <Policies>
+        <!-- Rolls over every day -->
+        <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+        <!-- Rolls over if the file reaches 10MB -->
+        <SizeBasedTriggeringPolicy size="10 MB" />
+    </Policies>
+    
+    <!-- Keeps the last 7 days of logs -->
+    <DefaultRolloverStrategy max="7" />
+</RollingFile>
+
+    <!-- DEBUG only -->
+    <File name="DebugFile" fileName="logs/debug.log">
+        <PatternLayout pattern="%d %-5level %c - %msg%n"/>
+        <Filters>
+            <LevelRangeFilter minLevel="debug" maxLevel="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Filters>
+    </File>
+
+    <!-- INFO only
+    <File name="InfoFile" fileName="logs/info.log">
+        <PatternLayout pattern="%d %-5level %c - %msg%n"/>
+        <Filters>
+            <LevelRangeFilter minLevel="info" maxLevel="info" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Filters>
+    </File>
+-->
+
+    <!-- WARN only -->
+    <File name="WarnFile" fileName="logs/warn.log">
+        <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %logger{1}.%M(%L) - %msg%n" />
+        <Filters>
+            <LevelRangeFilter minLevel="warn" maxLevel="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Filters>
+    </File>
+
+    <!-- ERROR and above -->
+    <File name="ErrorFile" fileName="logs/error.log">
+        <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %logger{1}.%M(%L) - %msg%n" />
+        <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+    </File>
+
+</Appenders>
+
+<Loggers>
+    <Root level="debug">
+        <AppenderRef ref="DebugFile"/>
+        <AppenderRef ref="InfoFile"/>
+        <AppenderRef ref="WarnFile"/>
+        <AppenderRef ref="ErrorFile"/>
+    </Root>
+</Loggers>
+
+</Configuration>

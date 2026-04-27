@@ -1,0 +1,236 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>abacus</groupId><!-- com.yourname -->
+  <artifactId>abacus</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>abacusDE</name>
+  <description>Computer program version of the German abacus. You can perform maths operations by moving beads back (subtraction) and forth (addition). After each bead movement, the program displays two results, the negative and the positive result. So, unlike ordinary German abaci, this program also enables you to compute calculations with negative numbers and results. You can read the entire API documentation in section Document.
+  </description>
+ 
+ <packaging>jar</packaging>
+ <properties>
+<!-- suppresses irritating warnings like this one, concercing platform dependant encodings:
+	Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!	
+	mvn clean
+	mvn clean package (deletes old files and rebuilds everything)
+	* mvn dependency:copy-dependencies (rarely used)
+	* mvn eclipse:eclipse (old for older eclipse versions)
+	mvn compile (checks if my code compiles)
+	mvn compile assembly:single (most times unnecessary)
+	mvn package (builds my app - includes compile + test)
+	mvn install (also includes compile, test, and package)
+	mvn site (almost never used in daily development)
+
+	rule of thumb:
+	while coding: mvn compile
+	to build: mvn package
+	if broken: mvn clean package
+	if running my app: mvn exec:java
+	
+	mavan.compiler.release 20
+-->
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<maven.compiler.release>26</maven.compiler.release>    	
+</properties>	
+
+<licenses>
+  <license>
+    <name>MIT License</name>
+    <url>https://opensource.org/licenses/MIT</url>
+    <distribution>repo</distribution>
+    <comments>Open source permissive license</comments>
+  </license>
+</licenses>
+
+<!--
+<dependencyManagement>	 
+ <dependencies>
+  <dependency>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-bom</artifactId>
+  <version>2.25.4</version>
+  <scope>import</scope>
+  <type>pom</type>
+  </dependency>
+ </dependencies>
+</dependencyManagement>
+-->
+
+<dependencies>        
+ <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <!-- version>3.0.0-beta2</version --> 
+    <version>2.25.4</version>
+ </dependency>
+ 
+ <dependency> 
+    <groupId>org.apache.logging.log4j</groupId> 
+    <artifactId>log4j-core</artifactId> 
+    <!-- version>3.0.0-beta3</version -->
+    <version>2.25.4</version>
+    <scope>runtime</scope> 
+ </dependency>
+
+ <dependency>
+  <groupId>org.junit.jupiter</groupId>
+  <artifactId>junit-jupiter</artifactId>
+  <version>6.0.3</version>
+  <scope>test</scope>
+ </dependency>
+
+<!--	
+ <dependency>
+  <groupId>org.junit.jupiter</groupId>
+  <artifactId>junit-jupiter-api</artifactId>
+  <version>6.0.3</version>
+  <scope>test</scope>
+ </dependency>
+ -->
+ 
+</dependencies>
+
+
+<build>
+ <plugins>
+ 
+  <plugin>
+   <groupId>org.apache.maven.plugins</groupId>    	    
+   <artifactId>maven-assembly-plugin</artifactId>
+   <version>3.3.0</version>
+   <executions>
+    <execution>
+     <phase>package</phase>
+     <goals>
+      <goal>single</goal>
+     </goals>
+    </execution>
+   </executions>      	
+      	
+   <configuration>
+    <finalName>abacus</finalName>
+    <appendAssemblyId>false</appendAssemblyId>
+    <archive>
+     <manifest>
+      <mainClass>abacus.Start</mainClass>
+     </manifest>
+    </archive>
+    <descriptorRefs>
+     <descriptorRef>jar-with-dependencies</descriptorRef>
+    </descriptorRefs>
+   </configuration>
+  </plugin>
+    
+  <plugin>
+   <artifactId>maven-resources-plugin</artifactId>
+   <version>3.3.0</version>
+   <executions>
+
+    <execution>
+     <id>copy-audio</id>
+     <phase>process-resources</phase>
+     <goals>
+      <goal>copy-resources</goal>
+     </goals>
+     <configuration>
+      <outputDirectory>${project.build.directory}/audio</outputDirectory>
+      <resources>
+       <resource>
+        <directory>audio</directory>
+        <filtering>false</filtering>
+       </resource>
+      </resources>
+     </configuration>
+    </execution>
+
+    <execution>
+     <id>copy-license</id>
+     <phase>process-resources</phase>
+     <goals>
+      <goal>copy-resources</goal>
+     </goals>
+     <configuration>
+      <outputDirectory>${project.build.directory}/licenses</outputDirectory>
+      <resources>
+       <resource>
+        <directory>licenses</directory>
+        <filtering>false</filtering>
+       </resource>
+      </resources>
+     </configuration>
+    </execution>
+   </executions>
+   </plugin>
+   
+<!-- does not work at the moment		
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-javadoc-plugin</artifactId>
+    <version>3.12.0</version>
+    <executions>
+     <execution>
+      <id>attach-javadocs</id>
+      <goals>
+       <goal>jar</goal>
+      </goals>
+      <configuration>
+       <overview>${project.basedir}/src/main/javadoc/overview.html</overview>
+       <encoding>UTF-8</encoding>
+       <docencoding>UTF-8</docencoding>
+       <charset>UTF-8</charset>
+       <docfilessubdirs>true</docfilessubdirs>
+       <additionalJOptions>
+        <additionalJOption>-docfilessubdirs</additionalJOption>
+        <additionalOption>
+        ## ignore-source-errors</additionalOption>
+       </additionalJOptions> 
+       ## Optional: add this if JDK 26 is still too strict
+       <doclint>none</doclint>
+      </configuration>        
+     </execution>
+    </executions>
+   </plugin>
+-->   
+  </plugins>
+
+  <resources><!-- LICENSE + THIRD_PARTY_NOTICES -->
+   <resource>
+    <directory>${project.basedir}</directory>
+     <includes>
+      <include>LICENSE</include>
+      <include>THIRD_PARTY_NOTICES.txt</include>
+     </includes>
+    </resource>
+    
+    <resource>
+	<directory>src/main/resources</directory>
+    <filtering>false</filtering>
+    <includes>
+    <include>**/log4j2.xml</include>
+    </includes>
+    </resource>
+                    
+   </resources>  			
+
+  </build>
+
+  <developers>
+  <!-- main developer -->
+   <developer>
+    <name>Nguyen V. Tan</name>
+    <email>nguyen.viet.tan@gmx.de</email>
+    <roles>
+     <role>main developer</role>
+    </roles>
+   </developer>
+	
+  <!-- GitHub provider -->
+  <developer>		
+   <name>Ruan Yue Xin</name>
+   <email>ruanyuexin@gmail.com</email>
+   <roles>
+    <role>GitHub provider</role>
+   </roles>	
+  </developer>
+ </developers>
+</project>
