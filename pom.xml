@@ -1,10 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>abacus</groupId><!-- com.yourname -->
+  <groupId>xin81</groupId><!-- com.yourname -->
   <artifactId>abacus</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>abacusDE</name>
-  <description>Computer program version of the German abacus. You can perform maths operations by moving beads back (subtraction) and forth (addition). After each bead movement, the program displays two results, the negative and the positive result. So, unlike ordinary German abaci, this program also enables you to compute calculations with negative numbers and results. You can read the entire API documentation in section Document.
+  <description>Desktop software program emulating a German abacus. You can perform maths operations by moving beads back (subtraction) and forth (addition). After each bead movement, the program displays two results, a negative and a positive result.
+   So, unlike ordinary German abaci, this program also enables you to compute calculations with negative numbers and results. You can read the entire API documentation in section Document.
   </description>
  
  <packaging>jar</packaging>
@@ -52,6 +53,7 @@
    <groupId>org.apache.maven.plugins</groupId>    	    
    <artifactId>maven-assembly-plugin</artifactId>
    <version>3.3.0</version>
+
    <executions>
     <execution>
      <phase>package</phase>
@@ -68,6 +70,11 @@
      <manifest>
       <mainClass>abacus.Start</mainClass>
      </manifest>
+     <manifestEntries><!-- INSERT THE MANIFEST CONFIGURATION HERE -->
+      <Built-By>Ruan Yue Xin (xin81)</Built-By>
+      <Implementation-Title>abacusDE</Implementation-Title>
+      <Implementation-Vendor>Ruan Yue Xin</Implementation-Vendor>
+     </manifestEntries>
     </archive>
     <descriptorRefs>
      <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -97,24 +104,6 @@
      </configuration>
     </execution>
 
-<!--
-    <execution>
-     <id>copy-license</id>
-     <phase>process-resources</phase>
-     <goals>
-      <goal>copy-resources</goal>
-     </goals>
-     <configuration>
-      <outputDirectory>${project.build.directory}/licenses</outputDirectory>
-      <resources>
-       <resource>
-        <directory>licenses</directory>
-        <filtering>false</filtering>
-       </resource>
-      </resources>
-     </configuration>
-    </execution>
--->
     <execution>
      <id>copy-settings</id>
      <phase>process-resources</phase>
@@ -161,20 +150,14 @@
   </build>
 
   <developers>
-  <!-- main developer -->
-   <developer>
-    <name>Nguyen V. Tan</name>
-    <roles>
-     <role>main developer</role>
-    </roles>
-   </developer>
-	
-  <!-- GitHub provider -->
-  <developer>		
-   <name>Ruan Yue Xin (xin81)</name>
+  <developer>
+   <id>xin81</id>
+   <name>Nguyen Viet Tan</name>
    <email>7662823+xin81@users.noreply.github.com</email>
+   <organization>Ruan Yue Xin</organization>
+   <organizationUrl>https://github.com</organizationUrl>
    <roles>
-    <role>GitHub provider</role>
+    <role>developer</role>
    </roles>	
   </developer>
  </developers>

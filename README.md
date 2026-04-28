@@ -38,5 +38,7 @@ To compile the project and generate the JAR manually:
 ## License  
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
-## Credits & Copyright  
-Copyright (c) 2026 Ruan Yue Xin (xin81)
+## Credits & Copyright
+* **Lead Developer**: Nguyen Viet Tan
+* **Provider**: Ruan Yue Xin (xin81)
+* Copyright (c) 2026 Ruan Yue Xin
