@@ -1,0 +1,11 @@
+--type dmg
+--app-version 1.0
+--copyright "© Ruan Yue Xin (xin81) 2026"
+--description "Emulates a German abacus"
+--name abacus
+--dest MacOSX
+--main-jar abacus.jar
+--main-class abacus.Start
+--license-file LICENSE
+--icon ./icon2.icns
+--input target

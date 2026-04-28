@@ -17,7 +17,6 @@ img/
 logs/
 tmp/
 jpackage.txt
-jpkMacOSX.txt
 pom.xml.versionsBackup
 MacOSX
 Windows
