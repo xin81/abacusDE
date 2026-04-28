@@ -37,6 +37,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y fakeroot
+
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
@@ -55,3 +58,27 @@ jobs:
         with:
           name: linux-installer
           path: Linux/*.deb
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: ./mvnw clean package
+
+      - name: Run jpackage for macOS
+        run: jpackage @jpkMacOSX.txt
+
+      - name: Upload DMG Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: macOS-installer
+          path: MacOSX/*.dmg
