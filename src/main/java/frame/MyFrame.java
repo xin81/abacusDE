@@ -77,28 +77,28 @@ public class MyFrame extends JFrame{
 		jpadd.setLayout(gl);
 		JPanel jpsub=new JPanel();
 		jpsub.setLayout(gl);
-		
+		String language=UIText.getLanguage();
 		// buttons
 		ActionListener al=new MyActionListener(this);
 		jbAdd=new JButton[row];
 		jbSub=new JButton[row];
 		jtAdd=new JComboBox[row];
 		jtSub=new JComboBox[row];
-		jbReset=new JButton("Reset");
+		jbReset=new JButton(UIText.getReset(language));
 		jbReset.addActionListener(al);
 		
 		// menu items
-		jmiClose=new JMenuItem("Close");
+		jmiClose=new JMenuItem(UIText.getCloseStr(language));
 		jmiClose.addActionListener(al);
 		
-		jmFile=new JMenu("File");
+		jmFile=new JMenu(UIText.getFile(language));
 		jmFile.add(jmiClose);
 		
-		jmiHideResults=new JCheckBoxMenuItem("Hide Results");
+		jmiHideResults=new JCheckBoxMenuItem(UIText.getHide_Results(language));
 		jmiHideResults.addActionListener(al);
-		jmiHideNumbering=new JCheckBoxMenuItem("Hide Numbering");
+		jmiHideNumbering=new JCheckBoxMenuItem(UIText.getHide_NumberingStr(language));
 		jmiHideNumbering.addActionListener(al);
-		jmOptions=new JMenu("Options");
+		jmOptions=new JMenu(UIText.getOptions(language));
 		jmOptions.add(jmiHideResults);
 		jmOptions.add(jmiHideNumbering);
 		

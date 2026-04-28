@@ -195,7 +195,7 @@ private void update(){
 			g.setColor(Color.BLACK);
 			g.drawRect((int)((rx+diametre)-rh), ry, (int)(rw-radius), rh);			
 			g.setColor(Color.LIGHT_GRAY);
-			g.fillRect((int)((rx+diametre)-rh)-1, ry-1, (int)(rw-radius), rh);
+			g.fillRect((int)((rx+diametre)-rh), ry, (int)(rw-radius), rh);
 
 			// left beam
 			int ry1=abacus[i][0].getY()-((int)((radius/2)+(radius/4)));			
@@ -204,7 +204,7 @@ private void update(){
 			g.setColor(Color.BLACK);
 			g.drawRect((int)((rx+diametre)-rh), ry1, rh, rw/13);			
 			g.setColor(beamColour);
-			g.fillRect((int)((rx+diametre)-rh)-1, ry1-1, rh, rw/13);
+			g.fillRect((int)((rx+diametre)-rh), ry1, rh, rw/13);
 			
 			// right beam
 			int rx2=(int)(rw-radius);
@@ -213,7 +213,7 @@ private void update(){
 			g.setColor(Color.BLACK);
 			g.drawRect((int)((rx2+diametre)+radius), ry2, (int)(rh-radius), rw/13);			
 			g.setColor(beamColour);
-			g.fillRect((int)((rx2+diametre)+radius)-1, ry2-1, (int)(rh-radius), rw/13);
+			g.fillRect((int)((rx2+diametre)+radius), ry2, (int)(rh-radius), rw/13);
 			
 			// abacus
 			for(int j=0; j < abacus[i].length; j++) {

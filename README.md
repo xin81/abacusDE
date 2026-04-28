@@ -1,6 +1,10 @@
 # ABacusDE  
 A Java-based emulator for a traditional German abacus.
 
+
+![Abacus Interface](screenshot.png)
+
+
 ## Features  
 * **Authentic Experience**: A typical German abacus with 100 beads across 10 rods, following traditional mathematical rules and logic.
 * **Dual Results Display**: Unlike a physical abacus, this emulator shows two types of results at the top:
