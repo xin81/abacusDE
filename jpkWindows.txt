@@ -1,0 +1,11 @@
+--type exe
+--app-version 1.0
+--copyright "© Nguyen Viet Tan 2026"
+--description "Emulates a German abacus"
+--name abacus
+--dest Windows
+--main-jar abacus.jar
+--main-class abacus.Start
+--license-file LICENSE
+--icon ./icon2.icns
+--input target
