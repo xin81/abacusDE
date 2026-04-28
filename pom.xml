@@ -9,26 +9,6 @@
  
  <packaging>jar</packaging>
  <properties>
-<!-- suppresses irritating warnings like this one, concercing platform dependant encodings:
-	Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!	
-	mvn clean
-	mvn clean package (deletes old files and rebuilds everything)
-	* mvn dependency:copy-dependencies (rarely used)
-	* mvn eclipse:eclipse (old for older eclipse versions)
-	mvn compile (checks if my code compiles)
-	mvn compile assembly:single (most times unnecessary)
-	mvn package (builds my app - includes compile + test)
-	mvn install (also includes compile, test, and package)
-	mvn site (almost never used in daily development)
-
-	rule of thumb:
-	while coding: mvn compile
-	to build: mvn package
-	if broken: mvn clean package
-	if running my app: mvn exec:java
-	
-	mavan.compiler.release 20
--->
 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 <maven.compiler.release>26</maven.compiler.release>    	
 </properties>	
@@ -42,32 +22,16 @@
   </license>
 </licenses>
 
-<!--
-<dependencyManagement>	 
- <dependencies>
-  <dependency>
-  <groupId>org.apache.logging.log4j</groupId>
-  <artifactId>log4j-bom</artifactId>
-  <version>2.25.4</version>
-  <scope>import</scope>
-  <type>pom</type>
-  </dependency>
- </dependencies>
-</dependencyManagement>
--->
-
-<dependencies>        
+<dependencies>
  <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-api</artifactId>
-    <!-- version>3.0.0-beta2</version --> 
     <version>2.25.4</version>
  </dependency>
  
  <dependency> 
     <groupId>org.apache.logging.log4j</groupId> 
     <artifactId>log4j-core</artifactId> 
-    <!-- version>3.0.0-beta3</version -->
     <version>2.25.4</version>
     <scope>runtime</scope> 
  </dependency>
@@ -78,16 +42,6 @@
   <version>6.0.3</version>
   <scope>test</scope>
  </dependency>
-
-<!--	
- <dependency>
-  <groupId>org.junit.jupiter</groupId>
-  <artifactId>junit-jupiter-api</artifactId>
-  <version>6.0.3</version>
-  <scope>test</scope>
- </dependency>
- -->
- 
 </dependencies>
 
 
@@ -161,36 +115,6 @@
     </execution>
    </executions>
    </plugin>
-   
-<!-- does not work at the moment		
-   <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-javadoc-plugin</artifactId>
-    <version>3.12.0</version>
-    <executions>
-     <execution>
-      <id>attach-javadocs</id>
-      <goals>
-       <goal>jar</goal>
-      </goals>
-      <configuration>
-       <overview>${project.basedir}/src/main/javadoc/overview.html</overview>
-       <encoding>UTF-8</encoding>
-       <docencoding>UTF-8</docencoding>
-       <charset>UTF-8</charset>
-       <docfilessubdirs>true</docfilessubdirs>
-       <additionalJOptions>
-        <additionalJOption>-docfilessubdirs</additionalJOption>
-        <additionalOption>
-        ## ignore-source-errors</additionalOption>
-       </additionalJOptions> 
-       ## Optional: add this if JDK 26 is still too strict
-       <doclint>none</doclint>
-      </configuration>        
-     </execution>
-    </executions>
-   </plugin>
--->   
   </plugins>
 
   <resources><!-- LICENSE + THIRD_PARTY_NOTICES -->
@@ -218,7 +142,6 @@
   <!-- main developer -->
    <developer>
     <name>Nguyen V. Tan</name>
-    <email>nguyen.viet.tan@gmx.de</email>
     <roles>
      <role>main developer</role>
     </roles>
@@ -227,7 +150,6 @@
   <!-- GitHub provider -->
   <developer>		
    <name>Ruan Yue Xin</name>
-   <email>ruanyuexin@gmail.com</email>
    <roles>
     <role>GitHub provider</role>
    </roles>	
