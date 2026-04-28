@@ -13,7 +13,7 @@ A Java-based emulator for a traditional German abacus.
 * **Audio Feedback**: Realistic clicking sounds trigger every time you move a bead.
 
 ## Requirements  
-* **Java**: 25+
+* **Java**: 21+
 * **Maven Wrapper**: Included in the project (`./mvnw`)
 
 ## Installation  
