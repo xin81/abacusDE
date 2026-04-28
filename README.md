@@ -2,7 +2,7 @@
 A Java-based emulator for a traditional German abacus.
 
 
-![Abacus Interface](screenshot.png)
+![Abacus Interface](Screenshot.png)
 
 
 ## Features  
