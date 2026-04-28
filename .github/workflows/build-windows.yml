@@ -1,0 +1,32 @@
+name: Build Windows Installer
+on: [push] # Triggers every time you push code
+
+jobs:
+  build:
+    runs-on: windows-latest # Asks GitHub for a Windows machine
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build with Maven
+        run: ./mvnw clean package
+
+      - name: Run jpackage for Windows
+        run: |
+          jpackage @jpkWindows.txt 
+        # Note: GitHub's Windows runners have WiX Toolset pre-installed!
+
+      - name: Upload Installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: inst/*.exe # Adjust 'inst' to match your --dest folder
+
