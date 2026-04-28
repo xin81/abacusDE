@@ -1,4 +1,5 @@
 # ABacusDE  
+[English] | [Deutsch](LIESMICH.md)  
 A Java-based emulator for a traditional German abacus.
 
 
@@ -18,9 +19,8 @@ A Java-based emulator for a traditional German abacus.
 
 ## Installation  
 To install immediately without compiling from source:
-1. Download **abacus-1.0.dmg**.
+1. Download the latest release for your operating system (for example, abacus-1.0.dmg on a MacOS X machine)
 2. Double-click the installer and follow the on-screen instructions.
-3. Drag the app to your Applications folder.
 
 ## Building from Source  
 To compile the project and generate the JAR manually:
@@ -29,7 +29,7 @@ To compile the project and generate the JAR manually:
 ```
 
 ## Usage  
-* **Movement**: Use the buttons labeled **Plus 10ᵖ** or **Minus 10ᵖ** to move beads.
+* **Movement**: Use the buttons labeled **Plus 10ᵖ** or **Minus 10ᵖ** to move beads; the small p denotes the power of 10 and also equals the numbering of each rod.
     * Example: Clicking `10⁰` adds/removes a bead with a value of 1.
     * Example: Clicking `10⁹` adds/removes a bead with a value of 1,000,000,000.
 * **Customization**: Use the **Options** menu to toggle "Hide Results" or "Hide Numbering."
