@@ -36,7 +36,7 @@ To compile the project and generate the JAR manually:
 * **Exiting**: Select **File > Close** to end the program.
 
 ## License  
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## Credits & Copyright  
 Copyright (c) 2026 Ruan Yue Xin (xin81)
