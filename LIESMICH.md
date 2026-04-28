@@ -8,9 +8,9 @@ Ein Java-basierter Emulator für einen traditionellen deutschen Abakus.
 ## Funktionen
 * **Authentisches Erlebnis**: Ein typisch deutscher Abakus mit 100 Kugeln auf 10 Stäben, der traditionellen mathematischen Regeln und Logik folgt.
 * **Duale Ergebnisanzeige**: Im Gegensatz zu einem physischen Abakus zeigt dieser Emulator oben zwei Arten von Ergebnissen an:
-    * **Positive Ergebnisse: Die Summe der aktiven Kugeln auf der rechten Seite.
-    * **Negative Ergebnisse: Berechnet nach Computer-Logik (z. B. wird -1 durch 9 aktive Kugeln rechts und 1 inaktive Kugel links dargestellt).
-* **Audio-Feedback: Bei jeder Bewegung eienr Kugel ertönt ein realistisches Klackgeräusch.
+    * Positive Ergebnisse: Die Summe der aktiven Kugeln auf der rechten Seite.
+    * Negative Ergebnisse: Berechnet nach Computer-Logik (z. B. wird -1 durch 9 aktive Kugeln rechts und 1 inaktive Kugel links dargestellt).
+* Audio-Feedback: Bei jeder Bewegung eienr Kugel ertönt ein realistisches Klackgeräusch.
 
 ## Voraussetzungen
 * **Java**: 21+
