@@ -20,8 +20,7 @@ jobs:
         run: ./mvnw clean package
 
       - name: Run jpackage for Windows
-        run: |
-          jpackage @jpkWindows.txt 
+        run:  jpackage "@jpkWindows.txt" 
         # Note: GitHub's Windows runners have WiX Toolset pre-installed!
 
       - name: Upload Installer
