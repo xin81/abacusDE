@@ -35,7 +35,7 @@ Um das Projekt manuell zu kompilieren und die JAR-Datei zu erstellen:
 * **Beenden**: Wähle **Datei > Schließen**, um das Programm zu beenden.
 
 ## Lizenz
-Veröffentlicht unter der MIT-Lizenz. Weitere Informationen findest du unter `LICENSE`.
+Veröffentlicht unter der MIT-Lizenz. Weitere Informationen finden Sie in der [englischen Originalfassung](LICENSE) oder der [deutschen Leseabschrift](LIZENZ).
 
 ## Mitwirkende & Copyright
 Copyright (c) 2026 Ruan Yue Xin (xin81)

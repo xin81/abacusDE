@@ -138,9 +138,13 @@
   <resources><!-- LICENSE + THIRD_PARTY_NOTICES -->
    <resource>
     <directory>${project.basedir}</directory>
+    <targetPath>META-INF</targetPath>
      <includes>
       <include>LICENSE</include>
+      <include>LIZENZ</include>
       <include>THIRD_PARTY_NOTICES.txt</include>
+      <include>README.md</include>
+      <include>LIESMICH.md</include>
      </includes>
     </resource>
     
