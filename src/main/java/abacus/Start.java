@@ -33,7 +33,7 @@ public class Start{
 				String option=data[0];
 				if(option.compareTo("--language")==0){
 					LANGUAGE=data[1];
-					IO.println("chosen language: "+LANGUAGE);
+					logger.info("chosen language: "+LANGUAGE);
 				}
 			}
 		}catch(IOException | URISyntaxException e){
