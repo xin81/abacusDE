@@ -97,6 +97,7 @@
      </configuration>
     </execution>
 
+<!--
     <execution>
      <id>copy-license</id>
      <phase>process-resources</phase>
@@ -108,6 +109,23 @@
       <resources>
        <resource>
         <directory>licenses</directory>
+        <filtering>false</filtering>
+       </resource>
+      </resources>
+     </configuration>
+    </execution>
+-->
+    <execution>
+     <id>copy-settings</id>
+     <phase>process-resources</phase>
+     <goals>
+      <goal>copy-resources</goal>
+     </goals>
+     <configuration>
+      <outputDirectory>${project.build.directory}/settings</outputDirectory>
+      <resources>
+       <resource>
+        <directory>settings</directory>
         <filtering>false</filtering>
        </resource>
       </resources>
@@ -149,7 +167,8 @@
 	
   <!-- GitHub provider -->
   <developer>		
-   <name>Ruan Yue Xin</name>
+   <name>Ruan Yue Xin (xin81)</name>
+   <email>7662823+xin81@users.noreply.github.com</email>
    <roles>
     <role>GitHub provider</role>
    </roles>	

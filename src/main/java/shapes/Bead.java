@@ -48,7 +48,7 @@ public class Bead extends JComponent {
 		
 		// but paint in colours
 		g.setColor(colour);
-		g.fillOval(x+1,  y+1, w-1, h-1);
+		g.fillOval(x,  y, w, h);
 	}
 	public void setColour(Color color){
 		colour=color;
