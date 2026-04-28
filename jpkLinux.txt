@@ -1,0 +1,12 @@
+--type deb
+--app-version 1.0
+--copyright "© Ruan Yue Xin (xin81) 2026"
+--description "Emulates a German abacus"
+--name abacus
+--dest Linux
+--main-jar abacus.jar
+--main-class abacus.Start
+--license-file LICENSE
+--input target
+--linux-shortcut
+--linux-menu-group Education
