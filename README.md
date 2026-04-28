@@ -1,39 +1,38 @@
-ABacusDE
+# ABacusDE  
 A Java-based emulator for a traditional German abacus.
 
-FEATURES
-You will see a typical German abacus with all its 100 beads and 10 rods.
-This abacus works similarly to a real physical German abacus including its mathematical rules and logic.
-However, unlike a physical abacus, you will see two types of results in the top of this abacus.
-On the right side, you will see the positive results (sum of bead values on the right side of this abacus).
-On the left side, you will see the negative results (sum of bead values on the left side of this abacus).
-The negative sum is calculated in the same way as computers do (for example, -1 is represented by 9 active
-beads on the right side, and 1 inactive bead on the left side). 
-Everytime you move a bead, you will hear the sound of clicking beads.
+## Features  
+* **Authentic Experience**: A typical German abacus with 100 beads across 10 rods, following traditional mathematical rules and logic.
+* **Dual Results Display**: Unlike a physical abacus, this emulator shows two types of results at the top:
+    * **Positive Results**: The sum of active beads on the right side.
+    * **Negative Results**: Calculated using computer-like logic (e.g., -1 is represented by 9 active beads on the right and 1 inactive bead on the left).
+* **Audio Feedback**: Realistic clicking sounds trigger every time you move a bead.
 
-REQUIREMENTS
-Java 25+
-Maven (./mwvnw)
+## Requirements  
+* **Java**: 25+
+* **Maven Wrapper**: Included in the project (`./mvnw`)
 
-INSTALLATION
-If you want to install it immediately without bothering compilation and building, just use the installer abacus-1.0.dmg. Double-click the installer, agree to the terms and use, and install it.
+## Installation  
+To install immediately without compiling from source:
+1. Download **abacus-1.0.dmg**.
+2. Double-click the installer and follow the on-screen instructions.
+3. Drag the app to your Applications folder.
 
-BUILDING
-To compile the project and generate the JAR:
+## Building from Source  
+To compile the project and generate the JAR manually:
 ```bash
 ./mvnw clean package
 ```
 
-USAGE
-You can move each beade from left to right by clicking a button called "plus 10^p". The upper digit p above the 10 is the power of ten.
-So for instance, when you click 10^0, you add a bead of the value 1 because 10^0=1. When you click 10^9, you add a bead of the value 1,000,000,000 because 10^9=1,000,000,000 (one billion).
-When you click minus 10^0, you remove a bead of value 1. Click minus 10^9 to remove a bead of value 1,000,000,000.
-By default, you will always see the result of your maths operations, and the numbering of each rod.
-If you don't want to see them, you can easily hide them by selecting "Hide Results" or "Hide Numbering" in the menu "Options".
-When you're done with the abacaus, just "Close" (in the menu "File") to end this program.
+## Usage  
+* **Movement**: Use the buttons labeled **Plus 10ᵖ** or **Minus 10ᵖ** to move beads.
+    * Example: Clicking `10⁰` adds/removes a bead with a value of 1.
+    * Example: Clicking `10⁹` adds/removes a bead with a value of 1,000,000,000.
+* **Customization**: Use the **Options** menu to toggle "Hide Results" or "Hide Numbering."
+* **Exiting**: Select **File > Close** to end the program.
 
-LICENSE
-Distributed under the MIT License. See LICENSE for more information.
+## License  
+Distributed under the MIT License. See `LICENSE` for more information.
 
-CREDITS/COPYRIGHT
-© Ruan Yue Xin (xin81) 
+## Credits & Copyright  
+Copyright (c) 2026 Ruan Yue Xin (xin81)
