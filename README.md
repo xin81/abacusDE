@@ -35,6 +35,18 @@ To compile the project and generate the JAR manually:
 * **Customization**: Use the **Options** menu to toggle "Hide Results" or "Hide Numbering."
 * **Exiting**: Select **File > Close** to end the program.
 
+### MacOS X
+You can launch this application in your terminal and set the application language beforehand. If you don't use the option --language, the default language will be German.
+`/Applications/abacus.app/Contents/MacOS/abacus --language en` (to change the application language to english)
+
+### Linux
+You can launch this application in your terminal and set the application language beforehand. If you don't use the option --language, the default language will be German.
+`/opt/abacus/bin/abacus --language en` (to change the application language to english)
+
+### Windows
+You can launch this application in your terminal and set the application language beforehand. If you don't use the option --language, the default language will be German.
+`"C:\Program Files\abacus\abacus.exe --language en` (to change the application to english)
+
 ## License  
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 

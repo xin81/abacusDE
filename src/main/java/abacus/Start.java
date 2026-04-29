@@ -21,32 +21,14 @@ public class Start{
 	public Start() {
 	}
 
-	private static void setLanguageByFile(String filename){
-		String installPath=System.getProperty("java.home");
-		try{
-		Path appPath = Paths.get(Start.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent();
-		File file=appPath.resolve(filename).toFile();
-			if(file.exists()){
-
-				String line=Files.readString(file.toPath());
-				String[] data=line.split(" ", 2);
-				String option=data[0];
-				if(option.compareTo("--language")==0){
-					LANGUAGE=data[1];
-					logger.info("chosen language: "+LANGUAGE);
-				}
-			}
-		}catch(IOException | URISyntaxException e){
-			logger.error(e.getMessage());
-		}
-	}
-
 	private static void setLanguageByArguments(String[] args){
-		if (args[0].compareTo("--language") == 0) {
-			if (args[1].length() == 2) {
-				if ((args[1].compareToIgnoreCase("en") == 0)
-				|| (args[1].compareToIgnoreCase("de") == 0)) {
-					UIText.setLanguage(args[0]);
+		for(int i=0; i < (args.length-1); i++){
+		if (args[i].compareTo("--language") == 0) {
+			System.out.println("args["+i+"]: "+args[i]);
+			if (args[i+1].length() == 2) {
+				if ((args[i+1].compareToIgnoreCase("en") == 0)
+				|| (args[i+1].compareToIgnoreCase("de") == 0)){
+					LANGUAGE=args[i+1];
 				} else {
 					logger.warn("Unknown language selected");
 				}
@@ -54,16 +36,26 @@ public class Start{
 		}else{
 			logger.warn("Unknown option selected");
 		}
+		}
 	}
 
 	public static void main(String[]args){
 		logger.info("Abacus started");
+
+		// accept the user's language choice based on their provided program arguments
 		if(args.length > 0){
 			setLanguageByArguments(args);
 		}else{
-			final String FILENAME="../settings/language.txt";
-			setLanguageByFile(FILENAME);
+			// retrieve the user's language on his machine
+			// and decide for them
+			String osLang=System.getProperty("user.language");
+			if(osLang.equalsIgnoreCase("en")){
+				LANGUAGE=osLang;
+			}else{
+				LANGUAGE="de";
+			}
 		}
+
 		UIText.setLanguage(LANGUAGE);
 		String language=UIText.getLanguage();
 		String appName= UIText.getAppName(language);

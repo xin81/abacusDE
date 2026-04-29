@@ -34,6 +34,18 @@ Um das Projekt manuell zu kompilieren und die JAR-Datei zu erstellen:
 * **Anpassung**: Über das Menü **Options** kannst du die "Ergebnisse -" oder die "Nummerierungen ausblenden".
 * **Beenden**: Wähle **Datei > Schließen**, um das Programm zu beenden.
 
+### MacOS X
+Die Anwendung kann auch über den Terminal mit optional voreingestellter Spracheinstellung gestartet werden. Ohne vorheriger Spracheinstellung ist die Anwendungssprache deutsch.
+./Applications/abacus.app/Contents/MacOS/abacus --language en (für die englische Spracheinstellung)
+
+### Linux
+Die Anwendung kann auch über den Terminal mit optional voreingestellter Spracheinstellung gestartet werden. Ohne vorheriger Spracheinstellung ist die Anwendungssprache deutsch.
+./opt/abacus/bin/abacus --language en (für die englische Spracheinstellung)
+
+### Windows
+Die Anwendung kann auch über den Terminal/Kommandozeile (cmd) mit optional voreingestellter Spracheinstellung gestartet werden. Ohne vorheriger Spracheinstellung ist die Anwendungssprache deutsch.
+C:\Program Files\abacus\abacus.exe --language en (für die englische Spracheinstellung)
+
 ## Lizenz
 Veröffentlicht unter der MIT-Lizenz. Weitere Informationen finden Sie in der [englischen Originalfassung](LICENSE) oder der [deutschen Leseabschrift](LIZENZ).
 
