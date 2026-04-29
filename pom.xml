@@ -71,7 +71,7 @@
       <mainClass>abacus.Start</mainClass>
      </manifest>
      <manifestEntries><!-- INSERT THE MANIFEST CONFIGURATION HERE -->
-      <Built-By>Ruan Yue Xin (xin81)</Built-By>
+      <Built-By>Nguyen Viet Tan</Built-By>
       <Implementation-Title>abacusDE</Implementation-Title>
       <Implementation-Vendor>Ruan Yue Xin</Implementation-Vendor>
      </manifestEntries>

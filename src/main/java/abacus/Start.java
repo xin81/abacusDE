@@ -12,7 +12,7 @@ import java.nio.file.Files;import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
-* @author Nguyen V. Tan
+* @author Nguyen Viet Tan
 * @version %I%
 */
 public class Start{
