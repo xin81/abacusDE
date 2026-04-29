@@ -56,4 +56,3 @@ Veröffentlicht unter der MIT-Lizenz. Weitere Informationen finden Sie in der [e
 * **Hauptentwickler**: Nguyen Viet Tan
 * **Anbieter**: Ruan Yue Xin (xin81)
 * Copyright (c) 2026 Ruan Yue Xin
-
