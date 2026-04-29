@@ -47,7 +47,7 @@ Die Anwendung kann auch über die Kommandozeile (cmd) mit optional voreingestell
 C:\Program Files\abacus\abacus.exe --language en (für die englische Spracheinstellung)
 
 ## Sprachen
-Derzeit werden nur deutsch (Standardsprache) und englisch unterstützt.
+Derzeit werden nur deutsch (Standard) und englisch unterstützt.
 
 ## Lizenz
 Veröffentlicht unter der MIT-Lizenz. Weitere Informationen finden Sie in der [englischen Originalfassung](LICENSE) oder der [deutschen Leseabschrift](LIZENZ).
