@@ -22,6 +22,12 @@ To install immediately without compiling from source:
 1. Download the latest release for your operating system (for example, abacus-1.0.dmg on a MacOS X machine)
 2. Double-click the installer and follow the on-screen instructions.
 
+## Supported Operating Systems
+This application is verified to run on:
+- **macOS**: 15 (Sequoia) and 26 (Tahoe) for both Apple Silicon and Intel.
+- **Windows**: Windows 11 (build 22H2 or newer).
+- **Linux**: Ubuntu 24.04 LTS and 26.04 LTS (x64).
+
 ## Building from Source  
 To compile the project and generate the JAR manually:
 ```bash
