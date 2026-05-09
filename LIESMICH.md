@@ -16,6 +16,18 @@ Ein Java-basierter Emulator für einen traditionellen deutschen Abakus.
 * **Java**: 21+
 * **Maven Wrapper**: Im Projekt enthalten (`./mvnw`)
 
+## Plattform-Kompatibilität
+Diese Software wird automatisch über GitHub Actions für die folgenden Plattformen erstellt und paketiert:
+
+- **macOS**: Universelle Unterstützung für Apple Silicon und Intel (erstellt unter macOS 15/26).
+- **Windows**: Windows 11 (x64).
+- **Linux**: Ubuntu 24.04/26.04 LTS (.deb Paket).
+
+**Hinweis für Nutzer:**
+Da ich ein unabhängiger Entwickler bin, verifiziere ich die **macOS-Version** persönlich auf meinem eigenen iMac. Die Windows- und Linux-Installer werden mit standardisierten, automatisierten Tools erstellt. Sollten Sie auf diesen Plattformen Probleme feststellen, eröffnen Sie bitte ein „GitHub Issue“, damit ich der Sache nachgehen kann!
+
+Ich entwickle dieses Programm in meiner Freizeit. Bitte haben Sie Verständnis dafür, dass ich keinen professionellen Support für alle Betriebssysteme garantieren kann.
+
 ## Installation
 Um das Programm sofort zu installieren, ohne es selbst zu kompilieren:
 1. Lade die entsprechende Release-Version für dein Betriebssystem herunter (z. B. abacus-1.0.dmg für MacOS X).

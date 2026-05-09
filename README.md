@@ -17,16 +17,22 @@ A Java-based emulator for a traditional German abacus.
 * **Java**: 21+
 * **Maven Wrapper**: Included in the project (`./mvnw`)
 
+## Platform Compatibility
+This software is automatically built and packaged via GitHub Actions for the following platforms:
+
+- **macOS**: Universal support for Apple Silicon and Intel (Built on macOS 15/26).
+- **Windows**: Windows 11 (x64).
+- **Linux**: Ubuntu 24.04/26.04 LTS (.deb package).
+
+**Note for Users:**
+  As an independent developer, I personally verify the **macOS** version on my own Intel iMac. The Windows and Linux installers are generated using standard automated tools. If you encounter any issues on these platforms, please open a GitHub Issue so I can investigate!
+
+  This is a personal hobby project. Please understand that I am unable to provide professional support or guarantee compatibility across all platforms. 
+
 ## Installation  
 To install immediately without compiling from source:
 1. Download the latest release for your operating system (for example, abacus-1.0.dmg on a MacOS X machine)
 2. Double-click the installer and follow the on-screen instructions.
-
-## Supported Operating Systems
-This application is verified to run on:
-- **macOS**: 15 (Sequoia) and 26 (Tahoe) for both Apple Silicon and Intel.
-- **Windows**: Windows 11 (build 22H2 or newer).
-- **Linux**: Ubuntu 24.04 LTS and 26.04 LTS (x64).
 
 ## Building from Source  
 To compile the project and generate the JAR manually:
