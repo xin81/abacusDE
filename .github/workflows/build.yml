@@ -5,6 +5,7 @@ on:
 
 jobs:
   # --- Windows Job ---
+  # latest version: Windows 11
   build-windows:
     runs-on: windows-latest
     steps:
@@ -31,6 +32,7 @@ jobs:
           path: Windows/*.exe
 
   # --- Linux Job ---
+  # latest version: 26.04 LTS, codenamed "Resolute Raccoon"
   build-linux:
     runs-on: ubuntu-latest
     steps:
@@ -66,7 +68,7 @@ jobs:
         # Build for both Intel (x86_64) and Apple Silicon (arm64)
         include:
           - arch: intel
-            runner: macos-13 # Standard Intel runner
+            runner: macos-15 # Standard Intel runner
           - arch: silicon
             runner: macos-latest # Standard Apple Silicon runner
     runs-on: ${{ matrix.runner }}
