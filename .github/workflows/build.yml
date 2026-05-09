@@ -67,8 +67,8 @@ jobs:
       matrix:
         # Build for both Intel (x86_64) and Apple Silicon (arm64)
         include:
-          - arch: intel
-            runner: macos-15 # Standard Intel runner
+          # - arch: intel (maybe someday I will use this architecture too)
+          #  runner: macos-15 # Standard Intel runner
           - arch: silicon
             runner: macos-latest # Standard Apple Silicon runner
     runs-on: ${{ matrix.runner }}
