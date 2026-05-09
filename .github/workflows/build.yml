@@ -59,8 +59,17 @@ jobs:
           name: linux-installer
           path: Linux/*.deb
 
+# --- macos job ---
   build-macos:
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        # Build for both Intel (x86_64) and Apple Silicon (arm64)
+        include:
+          - arch: intel
+            runner: macos-13 # Standard Intel runner
+          - arch: silicon
+            runner: macos-latest # Standard Apple Silicon runner
+    runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -75,10 +84,13 @@ jobs:
         run: ./mvnw clean package
 
       - name: Run jpackage for macOS
+        # No change needed here if your @jpkMacOSX.txt is generic;
+        # jpackage will use the architecture of the runner it's on.
         run: jpackage @jpkMacOSX.txt
 
       - name: Upload DMG Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: macOS-installer
+          # Separate the files so you know which is which
+          name: macOS-${{ matrix.arch }}-installer
           path: MacOSX/*.dmg
